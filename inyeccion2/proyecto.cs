@@ -10,7 +10,7 @@ namespace inyeccion2
 
         public string Nombre { get; set; }
         public double Codigo { get; set; }
-        public string  Area { get; set; }
+        public string Area { get; set; }
         public int Duracion { get; set; }
 
         public List<Proyecto> AgregarProyecto()
@@ -41,44 +41,52 @@ namespace inyeccion2
                 new Proyecto()
                 {
                     Nombre="Bancaria",
-                    Codigo=23,
+                    Codigo=9,
                     Area="Comercio",
-                    Duracion=12
+                    Duracion=53
                 },
                 new Proyecto()
                 {
                     Nombre="Mercadeo",
                     Codigo=52,
                     Area="Talento humano",
-                    Duracion=20
+                    Duracion=8
                 },
                 new Proyecto()
                 {
                     Nombre="Atencion primera",
                     Codigo=3,
                     Area="AIPI",
-                    Duracion=18
+                    Duracion=1
+                },
+                new Proyecto()
+                {
+                    Nombre="Moneda",
+                    Codigo=14,
+                    Area="Monetaria",
+                    Duracion=35
                 }
 
             };
-        return proys;
+            return proys;
         }
-        
-        public void imprimir()
+
+        public void imprimir(List<Proyecto> proyectos)
         {
-            Console.WriteLine($"Codigo mayor a 20");
-            foreach (var item in AgregarProyecto2())
+            foreach (var item in proyectos)
             {
                 
-                if (item.Codigo >= 20)
-                {
-                    
-                    Console.WriteLine($"En {item.Nombre} el codigo es {item.Codigo}");
-                }
-                
+                Console.WriteLine($"Nombre: {item.Nombre}");
+                Console.WriteLine($"Codigo: {item.Codigo}");
+                Console.WriteLine($"Area: {item.Area}");
+                Console.WriteLine($"Duracion: {item.Duracion}");
+
             }
         }
-            
+
+
+
+
     }
     
 }
